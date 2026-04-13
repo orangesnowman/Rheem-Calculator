@@ -1,0 +1,5 @@
+{
+  "name": "Buscador Interactivo Rheem",
+  "description": "Calculadora interactiva para encontrar el calentador de agua Rheem ideal basado en el número de personas, baños y uso de tina.",
+  "requestFramePermissions": []
+}
