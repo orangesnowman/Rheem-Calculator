@@ -4,6 +4,7 @@
  */
 
 import RheemWidget from './components/RheemWidget';
+import EmbedCodeSnippet from './components/EmbedCodeSnippet';
 
 export default function App() {
   return (
@@ -14,9 +15,11 @@ export default function App() {
         </h1>
         <p className="text-slate-500 font-medium">Encuentra el calentador perfecto para tu hogar</p>
       </div>
-      
+
       <RheemWidget />
-      
+
+      <EmbedCodeSnippet />
+
       <footer className="mt-12 text-slate-400 text-sm font-medium flex items-center gap-4">
         <span>© 2026 Rheem Manufacturing Company</span>
         <span className="w-1 h-1 bg-slate-300 rounded-full" />
