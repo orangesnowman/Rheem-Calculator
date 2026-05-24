@@ -6,15 +6,25 @@ const SITE_URL = 'https://calculador-calentadores.netlify.app';
 export default function EmbedCodeSnippet() {
   const [copied, setCopied] = useState(false);
 
-  const embedCode = `<iframe
-  src="${SITE_URL}/embed.html"
-  width="100%"
-  height="620"
-  frameborder="0"
-  style="max-width:900px; border:none; border-radius:24px; overflow:hidden;"
-  allow="clipboard-write"
-  title="Rheem Water Heater Calculator"
-></iframe>`;
+  const embedCode = `<div style="max-width:900px; margin:0 auto;">
+  <iframe
+    id="rheem-calculator"
+    src="${SITE_URL}/embed.html"
+    width="100%"
+    height="620"
+    frameborder="0"
+    style="border:none; border-radius:24px; overflow:hidden;"
+    allow="clipboard-write"
+    title="Rheem Water Heater Calculator"
+  ></iframe>
+  <script>
+    window.addEventListener("message", function(e) {
+      if (e.data && e.data.type === "rheem-widget-resize") {
+        document.getElementById("rheem-calculator").style.height = e.data.height + "px";
+      }
+    });
+  </script>
+</div>`;
 
   const handleCopy = async () => {
     await navigator.clipboard.writeText(embedCode);
